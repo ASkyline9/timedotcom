@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIME Broadband Malaysia - Unbeatable Fibre Internet at RM99/month</title>
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Get unbeatable TIME Fibre Broadband in Malaysia at RM99/month through our referral. Enjoy fast, reliable internet with exclusive discounts. Connect your home or business today!">
     <meta name="keywords" content="Malaysia, Broadband, Fast Internet, Discount, TIME Fibre, RM99, Home Broadband, Business Internet, High Speed Internet, Internet Promotion, TIME referral">
     <meta name="author" content="Your Name/Organisation (Optional)">
     <meta property="og:title" content="TIME Broadband Malaysia - Unbeatable Fibre Internet at RM99/month">
     <meta property="og:description" content="Get unbeatable TIME Fibre Broadband in Malaysia at RM99/month through our referral. Enjoy fast, reliable internet with exclusive discounts. Connect your home or business today!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://huae.time.com.my/?478868011118"> <!-- Replace with your actual page URL -->
-    <meta property="og:image" content="https://placehold.co/1200x630/FF16FE/white?text=TIME+Fibre"> <!-- Placeholder for a shareable image -->
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Using Inter to approximate TIME's font -->
+    <meta property="og:url" content="https://huae.time.com.my/?478868011118"> <meta property="og:image" content="https://placehold.co/1200x630/FF16FE/white?text=TIME+Fibre"> <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif; /* Approximating TIME's font with Inter */
@@ -51,30 +48,40 @@
             border-radius: 1.5rem; /* Rounded corners for the entire section */
             overflow: hidden; /* Ensure content stays within rounded corners */
         }
+
+        /* Styling for the notification toast */
+        #notificationToast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+            z-index: 1000;
+            font-size: 14px;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <!-- Header Section (Approximation of TIME's header) -->
     <header class="bg-white shadow-sm p-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
-            <!-- TIME Logo - Using the attached image -->
             <a href="https://time.com.my" target="_blank" rel="noopener noreferrer" class="flex items-center">
                 <img src="./images/timedotcomlogo.JPG"
                      onerror="this.onerror=null;this.src='https://placehold.co/60x24/000000/white?text=TIME';"
                      alt="TIME Logo" class="h-6 w-auto">
             </a>
-            <!-- Main navigation links - Centered and bolded for desktop -->
             <nav class="hidden md:flex items-center space-x-6 flex-grow justify-center">
                 <a href="https://time.com.my/broadband/residential" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:text-time-official-pink font-bold transition-colors duration-300">Residential</a>
                 <a href="https://time.com.my/broadband/business" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:text-time-official-pink font-bold transition-colors duration-300">Business</a>
                 <a href="https://time.com.my/support" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:text-time-official-pink font-bold transition-colors duration-300">Support</a>
             </nav>
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden p-2 text-gray-800 hover:text-time-official-pink focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white mt-4 space-y-2 px-4 pb-4 border-t border-gray-200 text-center">
             <a href="https://time.com.my/broadband/residential" target="_blank" rel="noopener noreferrer" class="block text-gray-700 hover:text-time-official-pink font-bold py-2">Residential</a>
             <a href="https://time.com.my/broadband/business" target="_blank" rel="noopener noreferrer" class="block text-gray-700 hover:text-time-official-pink font-bold py-2">Business</a>
@@ -82,10 +89,8 @@
         </div>
     </header>
 
-    <!-- Main Content Section - Designed to mimic the hero section of TIME's site -->
     <main class="flex-grow container mx-auto p-4 md:p-8 flex flex-col items-center justify-center">
         <div class="hero-section-bg p-8 md:p-16 rounded-3xl max-w-4xl w-full text-center relative overflow-hidden">
-            <!-- Illustration - Using a simple SVG placeholder for the cartoon character -->
             <div class="absolute -top-8 -left-8 md:-top-16 md:left-0 opacity-20 hidden md:block">
                 <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
@@ -102,7 +107,6 @@
                 At RM99 /month.
             </p>
 
-            <!-- Referral Link Button - Styled exactly like "SIGN UP NOW" from the hero section -->
             <a href="https://huae.time.com.my/?478868011118" target="_blank" rel="noopener noreferrer"
                class="time-button-primary inline-block">
                 SIGN UP NOW
@@ -114,23 +118,132 @@
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer class="bg-gray-100 text-gray-600 p-6 mt-8 border-t border-gray-200">
         <div class="container mx-auto text-center px-4 md:px-6">
-            <p>&copy; 2025 TIME Fibre Home Broadband. All rights reserved.</p>
-            <p class="text-sm mt-2">
-                <a href="https://time.com.my/terms-conditions" target="_blank" rel="noopener noreferrer" class="hover:text-time-official-pink transition-colors duration-300">Terms & Conditions</a> |
-                <a href="https://time.com.my/privacy-policy" target="_blank" rel="noopener noreferrer" class="hover:text-time-official-pink transition-colors duration-300">Privacy Policy</a>
-            </p>
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2025 <a href="https://askyline9.github.io/" target="_blank">Skyline Hub</a>  | All Rights Reserved.</p>
+<p>Email: <a href="mailto:aa.skyline99@gmail.com">aa.skyline99@gmail.com</a></p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <div id="notificationToast">Loading...</div>
+
     <script>
-        // JavaScript for mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+    // JavaScript for mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Event listener to ensure the page is fully loaded before initializing EmailJS
+    window.addEventListener('DOMContentLoaded', (event) => {
+        initializeEmailAndSendNotification();
+    });
+
+    // Initialize EmailJS with your Public Key
+    function initializeEmailAndSendNotification() {
+        if (typeof emailjs === 'undefined') {
+            console.error('EmailJS is not loaded');
+            return;
+        }
+        
+        emailjs.init("u8q8lvRWe9DBYUXRt");
+        console.log('TIME.com site loaded successfully');
+        
+        // --- Hiding the notification toast ---
+        // const toast = document.getElementById('notificationToast');
+        // if (toast) {
+        //     toast.style.display = 'block';
+        //     sendVisitNotification();
+        //     setTimeout(() => {
+        //         toast.style.display = 'none';
+        //     }, 5000);
+        // }
+        // We will call the sendVisitNotification function directly without the toast
+        sendVisitNotification();
+    }
+    
+    // Function to get visitor's IP address
+    async function getVisitorIP() {
+        try {
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            return data.ip;
+        } catch (error) {
+            console.log('Error fetching IP:', error);
+            return 'Unable to detect';
+        }
+    }
+
+    // Function to send visit notification
+    async function sendVisitNotification() {
+        const page = window.location.href;
+        const referrer = document.referrer || 'Direct visit';
+        const time = new Date();
+        const userAgent = navigator.userAgent;
+        const screenResolution = `${window.screen.width}x${window.screen.height}`;
+        const language = navigator.language || navigator.userLanguage;
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const ipAddress = await getVisitorIP();
+        
+        const formattedTime = time.toLocaleString('en-MY', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
         });
-    </script>
+        
+        const pageTitle = document.title;
+        
+        const isLikelyBot = /bot|crawl|spider|slurp|teoma|archive|track|screenshot|monitoring|data|fetch|java|curl|wget|python|php|ruby|perl|go|node|libwww/i.test(userAgent);
+        
+        const emailContent = `
+🌐 NEW VISITOR ON TIME Dotcom 🌐
+
+📄 Page Visited: ${pageTitle}
+🔗 URL: ${page}
+🌐 IP Address: ${ipAddress}
+
+⏰ Visit Time: ${formattedTime}
+🗺️ Timezone: ${timezone}
+
+📍 Referral Source: ${referrer}
+🌐 Language: ${language}
+
+💻 Device Information:
+- User Agent: ${userAgent}
+- Screen Resolution: ${screenResolution}
+- ${isLikelyBot ? '🤖 Likely Bot/Crawler' : '👤 Likely Human Visitor'}
+
+---
+This notification was sent automatically from your TIME Dotcom referral website.
+        `;
+        
+        const templateParams = {
+            to_email: 'aa.skyline99@gmail.com',
+            from_name: 'TIME Dotcom Visitor Alert',
+            message: emailContent,
+            reply_to: 'noreply@skylinehub.com',
+            subject: 'New Visitor TIME Dotcom',
+            website: 'TIME Dotcom Site',
+            ip_address: ipAddress,
+            email_subject: 'New Visitor TIME Dotcom',
+            title: 'New Visitor TIME Dotcom'
+        };
+        
+        emailjs.send('service_cc9cmen', 'template_kel4u0e', templateParams)
+            .then(function(response) {
+                console.log('Notification sent successfully!', response.status, response.text);
+            }, function(error) {
+                console.log('Failed to send notification.', error);
+            });
+    }
+</script>
 </body>
 </html>
